@@ -1,0 +1,53 @@
+<%- include('../partials/header'); -%>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6" style="display: flex">
+            <h1>HOD FACULTY</h1>
+            <a class="btn btn-default btn-xs" title="Create new DEPARTMENT" id="btnNew" href="/department">
+              <i class="fa fa-plus" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">All list</h3>
+              </div>
+
+              <div class="card-body">
+                <table class="table table-hover text-nowrap" id="list-table">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>NAME</th>
+                      <th>DEPARTMENT</th>
+                      <th>USERNAME</th>
+                      <th>PASSWORD</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </div>
+  <!-- /.content-wrapper -->
+
+  <%- include('../partials/footer'); -%>
+    <script src="/script/hod.js"></script>

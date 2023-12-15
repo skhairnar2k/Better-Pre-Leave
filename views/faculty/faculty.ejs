@@ -1,0 +1,239 @@
+<%- include('../partials/header'); -%>
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6" style="display: flex">
+          <h1>NEW FACULTY</h1>
+          <a
+            class="btn btn-default btn-xs"
+            title="Create new DEPARTMENT"
+            id="btnNew"
+          >
+            <i class="fa fa-plus" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card card-primary">
+            <div class="card-header">
+              <select
+                class="custom-select"
+                id="select-department-filter"
+                style="width: fit-content"
+              ></select>
+            </div>
+
+            <div class="card-body">
+              <table class="table table-hover text-nowrap" id="list-table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>NAME</th>
+                    <th>DEPARTMENT</th>
+                    <th>USERNAME</th>
+                    <th>PASSWORD</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalFaculty" aria-modal="true" role="dialog">
+      <div class="modal-dialog modal-default">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">NEW FACULTY</h4>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="inputFName">First Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputFName"
+                placeholder="Enter first name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="inputLName">Last Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputLName"
+                placeholder="Enter last name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="inputEmail">Email</label>
+              <div class="input-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="inputEmail"
+                  placeholder="Enter email address"
+                  required
+                />
+                <button
+                  class="btn btn-secondary"
+                  type="button"
+                  id="btnEmailVerify"
+                  style="display: none"
+                >
+                  Email Verify
+                </button>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="gender-switch">Gender:</label>
+              <input
+                type="checkbox"
+                id="gender-switch"
+                class="form-control-switch bootstrap-switch"
+                data-on-text="Male"
+                data-off-text="Female"
+                data-on-color="primary"
+                data-off-color="danger"
+              />
+            </div>
+            <div class="form-group">
+              <label>Select department</label>
+              <select class="form-control" id="selectDepartment"></select>
+            </div>
+            <div class="form-group">
+              <label>Date:</label>
+              <div
+                class="input-group date"
+                id="reservationdate"
+                data-target-input="nearest"
+              >
+                <input
+                  type="text"
+                  id="joiningDate"
+                  class="form-control datetimepicker-input"
+                  data-target="#reservationdate"
+                />
+                <div
+                  class="input-group-append"
+                  data-target="#reservationdate"
+                  data-toggle="datetimepicker"
+                >
+                  <div class="input-group-text">
+                    <i class="fa fa-calendar"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputLName">Username</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputUsername"
+                placeholder="Enter username"
+              />
+            </div>
+            <div class="form-group">
+              <label for="inputPassword">Password</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputPassword"
+                placeholder="Enter password"
+              />
+            </div>
+          </div>
+          <div class="modal-footer justify-content-between">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              Close
+            </button>
+            <button type="button" class="btn btn-primary" id="btnAddFaculty">
+              ADD NEW
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="modalOTP"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="modalEmailVerifyLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalEmailVerifyLabel">
+              Email Verification
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>
+              A One-Time Password (OTP) has been sent to your email address.
+              Please enter it below to verify your email:
+            </p>
+            <div class="form-group">
+              <label for="inputOTP">OTP</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputOTP"
+                placeholder="Enter OTP"
+                required
+              />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Cancel
+            </button>
+            <button type="button" class="btn btn-primary" id="btnVerifyOTP">
+              Verify OTP
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- /.content-wrapper -->
+
+<%- include('../partials/footer'); -%>
+<script src="/script/faculty.js"></script>

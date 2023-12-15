@@ -1,0 +1,79 @@
+<%- include('../partials/header'); -%>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6" style="display: flex">
+            <h1>STUDENT LEAVE'S</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">All list</h3>
+              </div>
+
+              <div class="card-body">
+                <table class="table table-hover text-nowrap" id="list-table">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>NAME</th>
+                      <th>DEPARTMENT</th>
+                      <th>REASON</th>
+                      <th>LEAVING PERIOD</th>
+                      <th>SUBMITTED DATE</th>
+                      <th>ACTION</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- The Modal -->
+      <div class="modal fade" id="statusModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Enter Reason for Rejection</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="rejectionReason">Reason:</label>
+                  <textarea class="form-control" id="rejectionReason" rows="3"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-primary" id="statusSubmitBtn">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </div>
+  <!-- /.content-wrapper -->
+
+  <%- include('../partials/footer'); -%>
+    <script src="/script/request_student_leave.js"></script>

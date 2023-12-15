@@ -1,0 +1,182 @@
+<%- include('../partials/header'); -%>
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6" style="display: flex">
+          <h1>APPLY</h1>
+          <a
+            class="btn btn-default btn-xs"
+            title="Create new DEPARTMENT"
+            id="btnNew"
+          >
+            <i class="fa fa-plus" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">RECENT LEAVE APPLY</h3>
+            </div>
+
+            <div class="card-body">
+              <table class="table table-hover text-nowrap" id="list-table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>LEAVE REASON</th>
+                    <th>LEAVE PERIOD</th>
+                    <th>SUBMITTED DATE</th>
+                    <th>STATUS</th>
+                    <th>STATUS REASON</th>
+                  </tr>
+                </thead>
+
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalLeave" aria-modal="true" role="dialog">
+      <div class="modal-dialog modal-default">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">LEAVE DETAIL</h4>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="inputReason">Leave for</label>
+              <select
+                type="text"
+                class="form-control"
+                id="selectTypeLeave"
+              ></select>
+            </div>
+
+            <div class="form-group">
+              <label for="inputReason">Any reason</label>
+              <textarea
+                type="text"
+                class="form-control"
+                id="inputReason"
+                placeholder="Enter your leaving reason"
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label>Leave from:</label>
+              <div
+                class="input-group date"
+                id="reservationdate"
+                data-target-input="nearest"
+              >
+                <input
+                  type="text"
+                  id="joiningDate"
+                  class="form-control datetimepicker-input"
+                  data-target="#reservationdate"
+                />
+                <div
+                  class="input-group-append"
+                  data-target="#reservationdate"
+                  data-toggle="datetimepicker"
+                >
+                  <div class="input-group-text">
+                    <i class="fa fa-calendar"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Leave till:</label>
+              <div
+                class="input-group date"
+                id="reservationdate2"
+                data-target-input="nearest"
+              >
+                <input
+                  type="text"
+                  id="endingDate"
+                  class="form-control datetimepicker-input"
+                  data-target="#reservationdate2"
+                />
+                <div
+                  class="input-group-append"
+                  data-target="#reservationdate2"
+                  data-toggle="datetimepicker"
+                >
+                  <div class="input-group-text">
+                    <i class="fa fa-calendar"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Leave Option:</label>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  name="leaveOption"
+                  id="firstHalf"
+                  value="firstHalf"
+                />
+                <label class="form-check-label" for="firstHalf">
+                  Start leave from first half of working hours
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  name="leaveOption"
+                  id="secondHalf"
+                  value="secondHalf"
+                />
+                <label class="form-check-label" for="secondHalf">
+                  Return on second half of working hours
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer justify-content-between">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              Close
+            </button>
+            <button type="button" class="btn btn-primary" id="btnAddLeave">
+              ADD NEW
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- /.content-wrapper -->
+
+<%- include('../partials/footer'); -%>
+<script src="/script/faculty_leave.js"></script>

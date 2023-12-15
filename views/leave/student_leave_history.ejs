@@ -1,0 +1,57 @@
+<%- include('../partials/header'); -%>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6" style="display: flex">
+            <h1>LEAVE HISTORY</h1>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">all detail</h3>
+              </div>
+
+              <div class="card-body">
+                <table class="table table-hover text-nowrap" id="list-table">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>LEAVE REASON</th>
+                      <th>LEAVE PERIOD</th>
+                      <th>SUBMITTED DATE</th>
+                      <th>STATUS</th>
+                      <th>STATUS REASON</th>
+                    </tr>
+                  </thead>
+
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </section>
+  </div>
+  <!-- /.content-wrapper -->
+
+  <%- include('../partials/footer'); -%>
+    <script>
+      var user_id = ` <%=user_id%>`
+     </script>
+    <script src="/script/student_leave_history.js"></script>

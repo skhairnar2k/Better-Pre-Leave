@@ -1,0 +1,124 @@
+<%- include('../partials/header'); -%>
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6" style="display: flex">
+          <h1>SYSTEM ADMIN</h1>
+          <a
+            class="btn btn-default btn-xs"
+            title="Create new DEPARTMENT"
+            id="btnNew"
+          >
+            <i class="fa fa-plus" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">All list</h3>
+            </div>
+
+            <div class="card-body">
+              <table class="table table-hover text-nowrap" id="list-table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>NAME</th>
+                    <th>USERNAME</th>
+                    <th>PASSWORD</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="modalSystemadmin"
+      aria-modal="true"
+      role="dialog"
+    >
+      <div class="modal-dialog modal-default">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">NEW SYSTEM ADMIN</h4>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="inputFName">First Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputFName"
+                placeholder="Enter first name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="inputLName">Last Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputLName"
+                placeholder="Enter last name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="inputLName">Username</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputUsername"
+                placeholder="Enter username"
+              />
+            </div>
+            <div class="form-group">
+              <label for="inputPassword">Password</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputPassword"
+                placeholder="Enter password"
+              />
+            </div>
+          </div>
+          <div class="modal-footer justify-content-between">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              Close
+            </button>
+            <button type="button" class="btn btn-primary" id="btnAddSysAdmin">
+              ADD NEW
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- /.content-wrapper -->
+
+<%- include('../partials/footer'); -%>
+<script src="/script/systemadmin.js"></script>
